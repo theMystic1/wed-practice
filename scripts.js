@@ -45,3 +45,9 @@ sections.forEach(section => {
   section.classList.add('hide-section');
   sectionObserver.observe(section);
 });
+
+/* 
+
+
+
+*/
