@@ -428,6 +428,9 @@
     right: 0;
   }
 
+  .body-page {
+    top: 75px;
+  }
   .middle-section {
     display: none;
   }
