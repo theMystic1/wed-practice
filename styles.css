@@ -5,17 +5,23 @@
 }
 
 .top-nav {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-color: #ede5f6;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 0 10px 0 rgba(0 0 0 0.6);
+
   z-index: 200;
+  transition: all 1000ms;
+}
+
+.nav--sticky {
+  background-color: rgba(255, 255, 255, 0.99);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 5px 5px rgba(0 0 0 0.1);
 }
 
 /* .top-nav .left-section h1,
@@ -67,7 +73,16 @@
   background-color: #ede5f6;
   color: #08040b;
   position: relative;
-  top: 70px;
+}
+
+.section {
+  transform: translatey(0);
+  opacity: 1;
+  transition: all 1000ms ease-in-out;
+}
+.hide-section {
+  transform: translatey(100px);
+  opacity: 0;
 }
 
 .below-nav {
@@ -402,12 +417,15 @@
   padding: 0 30px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 400px) {
   .top-nav {
-    width: 500px;
+    /* width: 100%; */
     height: 80px;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    left: 0;
+    right: 0;
   }
 
   .middle-section {
@@ -659,9 +677,9 @@
     justify-content: space-evenly;
   }
 
-  .bottom > .left-section h1 {
+  /*.bottom > .left-section h1 {
   }
-
+*/
   .socials ion-icon {
     font-size: 25px;
     padding: 0 10px;
