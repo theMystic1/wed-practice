@@ -4,7 +4,11 @@ const nav = document.querySelector('.top-nav');
 const h1 = document.querySelector('h1');
 const hero = document.querySelector('.below-nav');
 const sections = document.querySelectorAll('.section');
+const overlay = document.querySelector('.overlay');
+const midSection = document.querySelector('.middle-section');
+const menuBtn = document.querySelector('.menu-icon');
 
+//////////////////////
 const navHeight = nav.getBoundingClientRect().height;
 const callBack = function (entries) {
   entries.forEach(entry => {
@@ -46,6 +50,17 @@ sections.forEach(section => {
   sectionObserver.observe(section);
 });
 
+menuBtn.addEventListener('click', function () {
+  overlay.classList.remove('hidden');
+  midSection.classList.remove('middle--sect');
+  midSection.classList.add('nav-open');
+});
+
+overlay.addEventListener('click', function () {
+  overlay.classList.add('hidden');
+  midSection.classList.add('middle--sect');
+  midSection.classList.remove('nav-open');
+});
 /* 
 
 

@@ -421,7 +421,22 @@
 }
 
 .menu-icon ion-icon {
-  font-size: 24px;
+  font-size: 30px;
+}
+
+.overlay {
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* display: none; */
+  z-index: 200;
+}
+
+.hidden {
+  display: none;
 }
 
 @media screen and (max-width: 500px) {
@@ -436,8 +451,41 @@
   }
 
   .middle-section {
-    display: none;
-    /* display: block; */
+    background-color: #ffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100vh;
+    padding: 10rem 0;
+
+    z-index: 1000;
+    transition: all 500ms ease-in;
+  }
+
+  .middle--sect {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+
+  .nav-open .middle-section {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .middle-section ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .middle-section ul li {
+    margin-bottom: 2rem;
   }
 
   .right-section ul {
